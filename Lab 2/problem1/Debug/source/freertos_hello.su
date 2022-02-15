@@ -1,0 +1,5 @@
+../source/freertos_hello.c:23:6:hello_task	16	static
+../source/freertos_hello.c:32:6:hello_task2	16	static
+../source/freertos_hello.c:45:6:get_string_task	16	static
+../source/freertos_hello.c:55:6:print_string_task	16	static
+../source/freertos_hello.c:73:5:main	24	static
