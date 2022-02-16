@@ -1,0 +1,4 @@
+/home/ds/Documents/MCUXpresso_11.4.1_6260/workspace/frdmk66f_freertos_hello_problem_4/drivers/fsl_clock.h:725:20:CLOCK_EnableClock	24	static
+/home/ds/Documents/MCUXpresso_11.4.1_6260/workspace/frdmk66f_freertos_hello_problem_4/drivers/fsl_port.h:374:20:PORT_SetPinMux	24	static
+../board/pin_mux.c:37:6:BOARD_InitBootPins	8	static
+../board/pin_mux.c:60:6:BOARD_InitPins	8	static
