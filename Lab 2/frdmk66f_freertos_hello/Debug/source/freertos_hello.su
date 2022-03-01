@@ -1,0 +1,5 @@
+../source/freertos_hello.c:43:5:main	32	static
+../source/freertos_hello.c:79:6:producer_sem	40	static
+../source/freertos_hello.c:103:6:consumer_sem	32	static
+../source/freertos_hello.c:122:6:consumer1_sem	32	static
+../source/freertos_hello.c:141:6:consumer2_sem	32	static

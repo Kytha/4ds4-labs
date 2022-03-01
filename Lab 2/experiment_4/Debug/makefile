@@ -34,25 +34,25 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: frdmk66f_freertos_hello_problem4.axf
+all: frdmk66f_freertos_hello_experiment_4.axf
 
 # Tool invocations
-frdmk66f_freertos_hello_problem4.axf: $(OBJS) $(USER_OBJS)
+frdmk66f_freertos_hello_experiment_4.axf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU Linker'
-	arm-none-eabi-gcc -nostdlib -Xlinker -Map="frdmk66f_freertos_hello_problem4.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -T frdmk66f_freertos_hello_problem4_Debug.ld -o "frdmk66f_freertos_hello_problem4.axf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-gcc -nostdlib -Xlinker -Map="frdmk66f_freertos_hello_experiment_4.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -T "frdmk66f_freertos_hello_experiment_4_Debug.ld" -o "frdmk66f_freertos_hello_experiment_4.axf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build
 
 # Other Targets
 clean:
-	-$(RM) $(EXECUTABLES)$(OBJS)$(C_DEPS) frdmk66f_freertos_hello_problem4.axf
+	-$(RM) $(EXECUTABLES)$(OBJS)$(C_DEPS) frdmk66f_freertos_hello_experiment_4.axf
 	-@echo ' '
 
 post-build:
 	-@echo 'Performing post-build steps'
-	-arm-none-eabi-size "frdmk66f_freertos_hello_problem4.axf"; # arm-none-eabi-objcopy -v -O binary "frdmk66f_freertos_hello_problem4.axf" "frdmk66f_freertos_hello_problem4.bin" ; # checksum -p MK66FN2M0xxx18 -d "frdmk66f_freertos_hello_problem4.bin";
+	-arm-none-eabi-size "frdmk66f_freertos_hello_experiment_4.axf"; # arm-none-eabi-objcopy -v -O binary "frdmk66f_freertos_hello_experiment_4.axf" "frdmk66f_freertos_hello_experiment_4.bin" ; # checksum -p MK66FN2M0xxx18 -d "frdmk66f_freertos_hello_experiment_4.bin";
 	-@echo ' '
 
 .PHONY: all clean dependents post-build

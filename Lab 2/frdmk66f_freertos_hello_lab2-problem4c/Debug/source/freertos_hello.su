@@ -1,0 +1,7 @@
+../source/freertos_hello.c:33:6:producer_task	24	static
+../source/freertos_hello.c:46:6:consumer_task1	32	static
+../source/freertos_hello.c:65:6:consumer_task2	72	static
+../source/freertos_hello.c:92:6:producer_sem	40	static
+../source/freertos_hello.c:119:6:consumer1_sem	32	static
+../source/freertos_hello.c:141:6:consumer2_sem	72	static
+../source/freertos_hello.c:171:5:main	24	static

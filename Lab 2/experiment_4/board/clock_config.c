@@ -420,24 +420,10 @@ const osc_config_t oscConfig_BOARD_BootClockRUN =
  ******************************************************************************/
 void BOARD_BootClockRUN(void)
 {
-    /* Set the system clock dividers in SIM to safe value. */
-    CLOCK_SetSimSafeDivs();
-    /* Initializes OSC0 according to board configuration. */
-    CLOCK_InitOsc0(&oscConfig_BOARD_BootClockRUN);
-    CLOCK_SetXtal0Freq(oscConfig_BOARD_BootClockRUN.freq);
-    /* Configure the Internal Reference clock (MCGIRCLK). */
-    CLOCK_SetInternalRefClkConfig(mcgConfig_BOARD_BootClockRUN.irclkEnableMode,
-                                  mcgConfig_BOARD_BootClockRUN.ircs, 
-                                  mcgConfig_BOARD_BootClockRUN.fcrdiv);
-    /* Configure FLL external reference divider (FRDIV). */
-    CLOCK_CONFIG_SetFllExtRefDiv(mcgConfig_BOARD_BootClockRUN.frdiv);
-    /* Set MCG to PEE mode. */
-    CLOCK_BootToPeeMode(mcgConfig_BOARD_BootClockRUN.oscsel,
-                        mcgConfig_BOARD_BootClockRUN.pllcs,
-                        &mcgConfig_BOARD_BootClockRUN.pll0Config);
-    /* Set the clock configuration in SIM module. */
-    CLOCK_SetSimConfig(&simConfig_BOARD_BootClockRUN);
-    /* Set SystemCoreClock variable. */
-    SystemCoreClock = BOARD_BOOTCLOCKRUN_CORE_CLOCK;
+	CLOCK_SetSimSafeDivs();
+	CLOCK_SetInternalRefClkConfig(kMCG_IrclkEnable, kMCG_IrcFast, 2);
+	CLOCK_CONFIG_SetFllExtRefDiv(0);
+	CLOCK_SetExternalRefClkConfig(kMCG_OscselIrc);
+	CLOCK_SetSimConfig(&simConfig_BOARD_BootClockRUN);
 }
 

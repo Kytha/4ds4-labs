@@ -1,0 +1,2 @@
+/home/ds/Documents/MCUXpresso_11.4.1_6260/workspace/frdmk66f_freertos_hello_problem4/utilities/fsl_debug_console.h:152:24:DbgConsole_Init	24	static
+../board/board.c:26:6:BOARD_InitDebugConsole	16	static

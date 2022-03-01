@@ -229,8 +229,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x1c ./utilities/fsl_debug_console.o
  .debug_macro   0x0000000000000000       0xd2 ./utilities/fsl_debug_console.o
  .debug_macro   0x0000000000000000       0x1c ./utilities/fsl_debug_console.o
- .debug_line    0x0000000000000000      0x81d ./utilities/fsl_debug_console.o
- .debug_str     0x0000000000000000    0xbbf97 ./utilities/fsl_debug_console.o
+ .debug_line    0x0000000000000000      0x825 ./utilities/fsl_debug_console.o
+ .debug_str     0x0000000000000000    0xbbf98 ./utilities/fsl_debug_console.o
  .comment       0x0000000000000000       0x4e ./utilities/fsl_debug_console.o
  .debug_frame   0x0000000000000000       0xc4 ./utilities/fsl_debug_console.o
  .ARM.attributes
@@ -330,8 +330,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0xa8 ./utilities/fsl_str.o
  .debug_macro   0x0000000000000000      0x190 ./utilities/fsl_str.o
  .debug_macro   0x0000000000000000       0x56 ./utilities/fsl_str.o
- .debug_line    0x0000000000000000      0xb32 ./utilities/fsl_str.o
- .debug_str     0x0000000000000000    0xb59a5 ./utilities/fsl_str.o
+ .debug_line    0x0000000000000000      0xb35 ./utilities/fsl_str.o
+ .debug_str     0x0000000000000000    0xb59a6 ./utilities/fsl_str.o
  .comment       0x0000000000000000       0x4e ./utilities/fsl_str.o
  .debug_frame   0x0000000000000000      0x32c ./utilities/fsl_str.o
  .ARM.attributes
@@ -544,8 +544,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0xb5 ./freertos/freertos_kernel/croutine.o
  .debug_macro   0x0000000000000000      0x120 ./freertos/freertos_kernel/croutine.o
  .debug_macro   0x0000000000000000       0x49 ./freertos/freertos_kernel/croutine.o
- .debug_line    0x0000000000000000      0x363 ./freertos/freertos_kernel/croutine.o
- .debug_str     0x0000000000000000     0x939d ./freertos/freertos_kernel/croutine.o
+ .debug_line    0x0000000000000000      0x366 ./freertos/freertos_kernel/croutine.o
+ .debug_str     0x0000000000000000     0x939e ./freertos/freertos_kernel/croutine.o
  .comment       0x0000000000000000       0x4e ./freertos/freertos_kernel/croutine.o
  .ARM.attributes
                 0x0000000000000000       0x39 ./freertos/freertos_kernel/croutine.o
@@ -614,8 +614,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0xb5 ./freertos/freertos_kernel/event_groups.o
  .debug_macro   0x0000000000000000      0x120 ./freertos/freertos_kernel/event_groups.o
  .debug_macro   0x0000000000000000       0x91 ./freertos/freertos_kernel/event_groups.o
- .debug_line    0x0000000000000000      0x807 ./freertos/freertos_kernel/event_groups.o
- .debug_str     0x0000000000000000     0x9b5d ./freertos/freertos_kernel/event_groups.o
+ .debug_line    0x0000000000000000      0x80a ./freertos/freertos_kernel/event_groups.o
+ .debug_str     0x0000000000000000     0x9b5e ./freertos/freertos_kernel/event_groups.o
  .comment       0x0000000000000000       0x4e ./freertos/freertos_kernel/event_groups.o
  .debug_frame   0x0000000000000000      0x218 ./freertos/freertos_kernel/event_groups.o
  .ARM.attributes
@@ -807,8 +807,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0xb5 ./freertos/freertos_kernel/stream_buffer.o
  .debug_macro   0x0000000000000000      0x120 ./freertos/freertos_kernel/stream_buffer.o
  .debug_macro   0x0000000000000000       0x18 ./freertos/freertos_kernel/stream_buffer.o
- .debug_line    0x0000000000000000      0xc70 ./freertos/freertos_kernel/stream_buffer.o
- .debug_str     0x0000000000000000     0x9c86 ./freertos/freertos_kernel/stream_buffer.o
+ .debug_line    0x0000000000000000      0xc73 ./freertos/freertos_kernel/stream_buffer.o
+ .debug_str     0x0000000000000000     0x9c87 ./freertos/freertos_kernel/stream_buffer.o
  .comment       0x0000000000000000       0x4e ./freertos/freertos_kernel/stream_buffer.o
  .debug_frame   0x0000000000000000      0x3a8 ./freertos/freertos_kernel/stream_buffer.o
  .ARM.attributes
@@ -1193,8 +1193,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x7a ./drivers/fsl_common.o
  .debug_macro   0x0000000000000000       0xa8 ./drivers/fsl_common.o
  .debug_macro   0x0000000000000000      0x190 ./drivers/fsl_common.o
- .debug_line    0x0000000000000000      0x3b7 ./drivers/fsl_common.o
- .debug_str     0x0000000000000000    0xb4c7f ./drivers/fsl_common.o
+ .debug_line    0x0000000000000000      0x3b9 ./drivers/fsl_common.o
+ .debug_str     0x0000000000000000    0xb4c80 ./drivers/fsl_common.o
  .comment       0x0000000000000000       0x4e ./drivers/fsl_common.o
  .debug_frame   0x0000000000000000       0x58 ./drivers/fsl_common.o
  .ARM.attributes
@@ -1252,8 +1252,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x7a ./drivers/fsl_common_arm.o
  .debug_macro   0x0000000000000000       0xa8 ./drivers/fsl_common_arm.o
  .debug_macro   0x0000000000000000      0x190 ./drivers/fsl_common_arm.o
- .debug_line    0x0000000000000000      0x36a ./drivers/fsl_common_arm.o
- .debug_str     0x0000000000000000    0xb4bfa ./drivers/fsl_common_arm.o
+ .debug_line    0x0000000000000000      0x36c ./drivers/fsl_common_arm.o
+ .debug_str     0x0000000000000000    0xb4bfb ./drivers/fsl_common_arm.o
  .comment       0x0000000000000000       0x4e ./drivers/fsl_common_arm.o
  .debug_frame   0x0000000000000000       0x64 ./drivers/fsl_common_arm.o
  .ARM.attributes
@@ -1333,8 +1333,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x2e ./drivers/fsl_ftfx_cache.o
  .debug_macro   0x0000000000000000       0x7c ./drivers/fsl_ftfx_cache.o
  .debug_macro   0x0000000000000000       0x10 ./drivers/fsl_ftfx_cache.o
- .debug_line    0x0000000000000000      0x4ca ./drivers/fsl_ftfx_cache.o
- .debug_str     0x0000000000000000    0xb6f3b ./drivers/fsl_ftfx_cache.o
+ .debug_line    0x0000000000000000      0x4cc ./drivers/fsl_ftfx_cache.o
+ .debug_str     0x0000000000000000    0xb6f3c ./drivers/fsl_ftfx_cache.o
  .comment       0x0000000000000000       0x4e ./drivers/fsl_ftfx_cache.o
  .debug_frame   0x0000000000000000      0x138 ./drivers/fsl_ftfx_cache.o
  .ARM.attributes
@@ -1454,8 +1454,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x2e ./drivers/fsl_ftfx_controller.o
  .debug_macro   0x0000000000000000       0x7c ./drivers/fsl_ftfx_controller.o
  .debug_macro   0x0000000000000000       0x10 ./drivers/fsl_ftfx_controller.o
- .debug_line    0x0000000000000000      0xcbd ./drivers/fsl_ftfx_controller.o
- .debug_str     0x0000000000000000    0xb7b74 ./drivers/fsl_ftfx_controller.o
+ .debug_line    0x0000000000000000      0xcbf ./drivers/fsl_ftfx_controller.o
+ .debug_str     0x0000000000000000    0xb7b75 ./drivers/fsl_ftfx_controller.o
  .comment       0x0000000000000000       0x4e ./drivers/fsl_ftfx_controller.o
  .debug_frame   0x0000000000000000      0x40c ./drivers/fsl_ftfx_controller.o
  .ARM.attributes
@@ -1583,8 +1583,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x7c ./drivers/fsl_ftfx_flash.o
  .debug_macro   0x0000000000000000       0x10 ./drivers/fsl_ftfx_flash.o
  .debug_macro   0x0000000000000000       0x1c ./drivers/fsl_ftfx_flash.o
- .debug_line    0x0000000000000000      0xb6d ./drivers/fsl_ftfx_flash.o
- .debug_str     0x0000000000000000    0xb7f3f ./drivers/fsl_ftfx_flash.o
+ .debug_line    0x0000000000000000      0xb6f ./drivers/fsl_ftfx_flash.o
+ .debug_str     0x0000000000000000    0xb7f40 ./drivers/fsl_ftfx_flash.o
  .comment       0x0000000000000000       0x4e ./drivers/fsl_ftfx_flash.o
  .debug_frame   0x0000000000000000      0x47c ./drivers/fsl_ftfx_flash.o
  .ARM.attributes
@@ -1643,8 +1643,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x2e ./drivers/fsl_ftfx_flexnvm.o
  .debug_macro   0x0000000000000000       0x7c ./drivers/fsl_ftfx_flexnvm.o
  .debug_macro   0x0000000000000000       0x10 ./drivers/fsl_ftfx_flexnvm.o
- .debug_line    0x0000000000000000      0x394 ./drivers/fsl_ftfx_flexnvm.o
- .debug_str     0x0000000000000000    0xb5e55 ./drivers/fsl_ftfx_flexnvm.o
+ .debug_line    0x0000000000000000      0x396 ./drivers/fsl_ftfx_flexnvm.o
+ .debug_str     0x0000000000000000    0xb5e56 ./drivers/fsl_ftfx_flexnvm.o
  .comment       0x0000000000000000       0x4e ./drivers/fsl_ftfx_flexnvm.o
  .ARM.attributes
                 0x0000000000000000       0x39 ./drivers/fsl_ftfx_flexnvm.o
@@ -1715,8 +1715,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0xa8 ./drivers/fsl_gpio.o
  .debug_macro   0x0000000000000000      0x190 ./drivers/fsl_gpio.o
  .debug_macro   0x0000000000000000       0x10 ./drivers/fsl_gpio.o
- .debug_line    0x0000000000000000      0x41c ./drivers/fsl_gpio.o
- .debug_str     0x0000000000000000    0xb563d ./drivers/fsl_gpio.o
+ .debug_line    0x0000000000000000      0x41e ./drivers/fsl_gpio.o
+ .debug_str     0x0000000000000000    0xb563e ./drivers/fsl_gpio.o
  .comment       0x0000000000000000       0x4e ./drivers/fsl_gpio.o
  .debug_frame   0x0000000000000000       0xc8 ./drivers/fsl_gpio.o
  .ARM.attributes
@@ -1966,8 +1966,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x7a ./drivers/fsl_smc.o
  .debug_macro   0x0000000000000000       0xa8 ./drivers/fsl_smc.o
  .debug_macro   0x0000000000000000      0x190 ./drivers/fsl_smc.o
- .debug_line    0x0000000000000000      0x64f ./drivers/fsl_smc.o
- .debug_str     0x0000000000000000    0xb59c0 ./drivers/fsl_smc.o
+ .debug_line    0x0000000000000000      0x651 ./drivers/fsl_smc.o
+ .debug_str     0x0000000000000000    0xb59c1 ./drivers/fsl_smc.o
  .comment       0x0000000000000000       0x4e ./drivers/fsl_smc.o
  .debug_frame   0x0000000000000000      0x24c ./drivers/fsl_smc.o
  .ARM.attributes
@@ -2264,8 +2264,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x26 ./component/uart/fsl_adapter_uart.o
  .debug_macro   0x0000000000000000      0x3ae ./component/uart/fsl_adapter_uart.o
  .debug_macro   0x0000000000000000       0x3a ./component/uart/fsl_adapter_uart.o
- .debug_line    0x0000000000000000      0x6fd ./component/uart/fsl_adapter_uart.o
- .debug_str     0x0000000000000000    0xb8af2 ./component/uart/fsl_adapter_uart.o
+ .debug_line    0x0000000000000000      0x703 ./component/uart/fsl_adapter_uart.o
+ .debug_str     0x0000000000000000    0xb8af3 ./component/uart/fsl_adapter_uart.o
  .comment       0x0000000000000000       0x4e ./component/uart/fsl_adapter_uart.o
  .debug_frame   0x0000000000000000      0x110 ./component/uart/fsl_adapter_uart.o
  .ARM.attributes
@@ -2369,8 +2369,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x3a ./component/serial_manager/fsl_component_serial_manager.o
  .debug_macro   0x0000000000000000       0x10 ./component/serial_manager/fsl_component_serial_manager.o
  .debug_macro   0x0000000000000000       0x66 ./component/serial_manager/fsl_component_serial_manager.o
- .debug_line    0x0000000000000000      0x996 ./component/serial_manager/fsl_component_serial_manager.o
- .debug_str     0x0000000000000000    0xb8a60 ./component/serial_manager/fsl_component_serial_manager.o
+ .debug_line    0x0000000000000000      0x99d ./component/serial_manager/fsl_component_serial_manager.o
+ .debug_str     0x0000000000000000    0xb8a61 ./component/serial_manager/fsl_component_serial_manager.o
  .comment       0x0000000000000000       0x4e ./component/serial_manager/fsl_component_serial_manager.o
  .debug_frame   0x0000000000000000      0x258 ./component/serial_manager/fsl_component_serial_manager.o
  .ARM.attributes
@@ -2454,8 +2454,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x3a ./component/serial_manager/fsl_component_serial_port_uart.o
  .debug_macro   0x0000000000000000       0x10 ./component/serial_manager/fsl_component_serial_port_uart.o
  .debug_macro   0x0000000000000000       0x66 ./component/serial_manager/fsl_component_serial_port_uart.o
- .debug_line    0x0000000000000000      0x74f ./component/serial_manager/fsl_component_serial_port_uart.o
- .debug_str     0x0000000000000000    0xb8811 ./component/serial_manager/fsl_component_serial_port_uart.o
+ .debug_line    0x0000000000000000      0x756 ./component/serial_manager/fsl_component_serial_port_uart.o
+ .debug_str     0x0000000000000000    0xb8812 ./component/serial_manager/fsl_component_serial_port_uart.o
  .comment       0x0000000000000000       0x4e ./component/serial_manager/fsl_component_serial_port_uart.o
  .debug_frame   0x0000000000000000       0xe8 ./component/serial_manager/fsl_component_serial_port_uart.o
  .ARM.attributes
@@ -2539,8 +2539,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0xa8 ./component/lists/fsl_component_generic_list.o
  .debug_macro   0x0000000000000000      0x190 ./component/lists/fsl_component_generic_list.o
  .debug_macro   0x0000000000000000       0x10 ./component/lists/fsl_component_generic_list.o
- .debug_line    0x0000000000000000      0x6bd ./component/lists/fsl_component_generic_list.o
- .debug_str     0x0000000000000000    0xb4e8b ./component/lists/fsl_component_generic_list.o
+ .debug_line    0x0000000000000000      0x6c0 ./component/lists/fsl_component_generic_list.o
+ .debug_str     0x0000000000000000    0xb4e8c ./component/lists/fsl_component_generic_list.o
  .comment       0x0000000000000000       0x4e ./component/lists/fsl_component_generic_list.o
  .debug_frame   0x0000000000000000      0x254 ./component/lists/fsl_component_generic_list.o
  .ARM.attributes
@@ -4466,60 +4466,60 @@ LOAD linker stubs
  .debug_macro   0x000000000001bbc6      0x153 ./board/clock_config.o
  .debug_macro   0x000000000001bd19      0x11e ./board/pin_mux.o
 
-.debug_line     0x0000000000000000     0xb3b0
- .debug_line    0x0000000000000000      0x67f ./utilities/fsl_assert.o
- .debug_line    0x000000000000067f      0xa61 ./startup/startup_mk66f18.o
- .debug_line    0x00000000000010e0      0x84b ./source/freertos_hello.o
- .debug_line    0x000000000000192b       0x59 ./source/semihost_hardfault.o
- .debug_line    0x0000000000001984      0x6b9 ./freertos/freertos_kernel/portable/MemMang/heap_4.o
- .debug_line    0x000000000000203d      0x697 ./freertos/freertos_kernel/portable/GCC/ARM_CM4F/port.o
- .debug_line    0x00000000000026d4      0x46e ./freertos/freertos_kernel/list.o
- .debug_line    0x0000000000002b42     0x12f4 ./freertos/freertos_kernel/queue.o
- .debug_line    0x0000000000003e36     0x1a3f ./freertos/freertos_kernel/tasks.o
- .debug_line    0x0000000000005875      0xa55 ./freertos/freertos_kernel/timers.o
- .debug_line    0x00000000000062ca     0x184b ./drivers/fsl_clock.o
- .debug_line    0x0000000000007b15      0xfef ./drivers/fsl_lpuart.o
- .debug_line    0x0000000000008b04     0x147c ./drivers/fsl_uart.o
- .debug_line    0x0000000000009f80      0x43b ./device/system_MK66F18.o
- .debug_line    0x000000000000a3bb      0x71e ./board/board.o
- .debug_line    0x000000000000aad9      0x4c6 ./board/clock_config.o
- .debug_line    0x000000000000af9f      0x411 ./board/pin_mux.o
+.debug_line     0x0000000000000000     0xb3ea
+ .debug_line    0x0000000000000000      0x687 ./utilities/fsl_assert.o
+ .debug_line    0x0000000000000687      0xa61 ./startup/startup_mk66f18.o
+ .debug_line    0x00000000000010e8      0x855 ./source/freertos_hello.o
+ .debug_line    0x000000000000193d       0x59 ./source/semihost_hardfault.o
+ .debug_line    0x0000000000001996      0x6bc ./freertos/freertos_kernel/portable/MemMang/heap_4.o
+ .debug_line    0x0000000000002052      0x69a ./freertos/freertos_kernel/portable/GCC/ARM_CM4F/port.o
+ .debug_line    0x00000000000026ec      0x471 ./freertos/freertos_kernel/list.o
+ .debug_line    0x0000000000002b5d     0x12f7 ./freertos/freertos_kernel/queue.o
+ .debug_line    0x0000000000003e54     0x1a42 ./freertos/freertos_kernel/tasks.o
+ .debug_line    0x0000000000005896      0xa58 ./freertos/freertos_kernel/timers.o
+ .debug_line    0x00000000000062ee     0x184d ./drivers/fsl_clock.o
+ .debug_line    0x0000000000007b3b      0xff1 ./drivers/fsl_lpuart.o
+ .debug_line    0x0000000000008b2c     0x147e ./drivers/fsl_uart.o
+ .debug_line    0x0000000000009faa      0x43c ./device/system_MK66F18.o
+ .debug_line    0x000000000000a3e6      0x727 ./board/board.o
+ .debug_line    0x000000000000ab0d      0x4c9 ./board/clock_config.o
+ .debug_line    0x000000000000afd6      0x414 ./board/pin_mux.o
 
-.debug_str      0x0000000000000000    0xc4f63
- .debug_str     0x0000000000000000    0xb85eb ./utilities/fsl_assert.o
-                                      0xb8688 (size before relaxing)
- .debug_str     0x00000000000b85eb      0x92e ./startup/startup_mk66f18.o
-                                       0x37f1 (size before relaxing)
- .debug_str     0x00000000000b8f19     0x4265 ./source/freertos_hello.o
-                                      0xbc8a8 (size before relaxing)
- .debug_str     0x00000000000bd17e       0x1f ./source/semihost_hardfault.o
-                                       0x2e0d (size before relaxing)
- .debug_str     0x00000000000bd19d      0x3b0 ./freertos/freertos_kernel/portable/MemMang/heap_4.o
-                                       0x91c2 (size before relaxing)
- .debug_str     0x00000000000bd54d      0x84f ./freertos/freertos_kernel/portable/GCC/ARM_CM4F/port.o
-                                       0x965c (size before relaxing)
- .debug_str     0x00000000000bdd9c      0x135 ./freertos/freertos_kernel/list.o
-                                       0x7d4d (size before relaxing)
- .debug_str     0x00000000000bded1      0x8ba ./freertos/freertos_kernel/queue.o
-                                       0x9fa3 (size before relaxing)
- .debug_str     0x00000000000be78b     0x154b ./freertos/freertos_kernel/tasks.o
-                                       0xadd6 (size before relaxing)
- .debug_str     0x00000000000bfcd6      0x608 ./freertos/freertos_kernel/timers.o
-                                       0xa4aa (size before relaxing)
- .debug_str     0x00000000000c02de     0x24ec ./drivers/fsl_clock.o
-                                      0xb7a37 (size before relaxing)
- .debug_str     0x00000000000c27ca     0x1622 ./drivers/fsl_lpuart.o
-                                      0xb6f18 (size before relaxing)
- .debug_str     0x00000000000c3dec      0x9d7 ./drivers/fsl_uart.o
-                                      0xb6e89 (size before relaxing)
- .debug_str     0x00000000000c47c3      0x117 ./device/system_MK66F18.o
-                                      0xb3540 (size before relaxing)
- .debug_str     0x00000000000c48da       0xd0 ./board/board.o
-                                      0xb978c (size before relaxing)
- .debug_str     0x00000000000c49aa      0x442 ./board/clock_config.o
-                                      0xb5df0 (size before relaxing)
- .debug_str     0x00000000000c4dec      0x177 ./board/pin_mux.o
-                                      0xb5198 (size before relaxing)
+.debug_str      0x0000000000000000    0xc4f64
+ .debug_str     0x0000000000000000    0xb85ec ./utilities/fsl_assert.o
+                                      0xb8689 (size before relaxing)
+ .debug_str     0x00000000000b85ec      0x92e ./startup/startup_mk66f18.o
+                                       0x37f2 (size before relaxing)
+ .debug_str     0x00000000000b8f1a     0x4265 ./source/freertos_hello.o
+                                      0xbc8a9 (size before relaxing)
+ .debug_str     0x00000000000bd17f       0x1f ./source/semihost_hardfault.o
+                                       0x2e0e (size before relaxing)
+ .debug_str     0x00000000000bd19e      0x3b0 ./freertos/freertos_kernel/portable/MemMang/heap_4.o
+                                       0x91c3 (size before relaxing)
+ .debug_str     0x00000000000bd54e      0x84f ./freertos/freertos_kernel/portable/GCC/ARM_CM4F/port.o
+                                       0x965d (size before relaxing)
+ .debug_str     0x00000000000bdd9d      0x135 ./freertos/freertos_kernel/list.o
+                                       0x7d4e (size before relaxing)
+ .debug_str     0x00000000000bded2      0x8ba ./freertos/freertos_kernel/queue.o
+                                       0x9fa4 (size before relaxing)
+ .debug_str     0x00000000000be78c     0x154b ./freertos/freertos_kernel/tasks.o
+                                       0xadd7 (size before relaxing)
+ .debug_str     0x00000000000bfcd7      0x608 ./freertos/freertos_kernel/timers.o
+                                       0xa4ab (size before relaxing)
+ .debug_str     0x00000000000c02df     0x24ec ./drivers/fsl_clock.o
+                                      0xb7a38 (size before relaxing)
+ .debug_str     0x00000000000c27cb     0x1622 ./drivers/fsl_lpuart.o
+                                      0xb6f19 (size before relaxing)
+ .debug_str     0x00000000000c3ded      0x9d7 ./drivers/fsl_uart.o
+                                      0xb6e8a (size before relaxing)
+ .debug_str     0x00000000000c47c4      0x117 ./device/system_MK66F18.o
+                                      0xb3541 (size before relaxing)
+ .debug_str     0x00000000000c48db       0xd0 ./board/board.o
+                                      0xb978d (size before relaxing)
+ .debug_str     0x00000000000c49ab      0x442 ./board/clock_config.o
+                                      0xb5df1 (size before relaxing)
+ .debug_str     0x00000000000c4ded      0x177 ./board/pin_mux.o
+                                      0xb5199 (size before relaxing)
 
 .comment        0x0000000000000000       0x4d
  .comment       0x0000000000000000       0x4d ./utilities/fsl_assert.o

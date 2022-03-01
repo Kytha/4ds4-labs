@@ -1,3 +1,9 @@
-../source/freertos_hello.c:32:6:producer_event	24	static
-../source/freertos_hello.c:58:6:consumer_event	32	static
-../source/freertos_hello.c:173:5:main	24	static
+/home/ds/Documents/MCUXpresso_11.4.1_6260/workspace/4ds4-labs/Lab 2/experiment_4/CMSIS/core_cm4.h:1679:22:__NVIC_EnableIRQ	16	static
+/home/ds/Documents/MCUXpresso_11.4.1_6260/workspace/4ds4-labs/Lab 2/experiment_4/CMSIS/core_cm4.h:1809:22:__NVIC_SetPriority	16	static
+/home/ds/Documents/MCUXpresso_11.4.1_6260/workspace/4ds4-labs/Lab 2/experiment_4/drivers/fsl_common_arm.h:488:24:EnableIRQ	24	static
+/home/ds/Documents/MCUXpresso_11.4.1_6260/workspace/4ds4-labs/Lab 2/experiment_4/drivers/fsl_uart.h:667:23:UART_ReadByte	16	static
+../source/freertos_hello.c:37:6:setupUART	24	static
+../source/freertos_hello.c:57:6:UART4_RX_TX_IRQHandler	16	static
+../source/freertos_hello.c:83:6:producer_event	24	static
+../source/freertos_hello.c:109:6:consumer_event	32	static
+../source/freertos_hello.c:142:5:main	24	static
