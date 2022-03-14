@@ -3,6 +3,12 @@
 SemaphoreHandle_t rc_hold_semaphore;
 TaskHandle_t rc_task_handle;
 
+extern QueueHandle_t angle_queue;
+extern QueueHandle_t motor_queue;
+extern QueueHandle_t led_queue;
+
+int speedMode;
+
 void setupRCReceiverComponent()
 {
 	setupRCPins();
@@ -51,6 +57,20 @@ void rcTask(void* pvParameters)
 		UART_ReadBlocking(UART1, &ptr[1], sizeof(rc_values) - 1);
 		if(rc_values.header == 0x4020)
 		{
+			BaseType_t status;
+			int chanel6 = rc_values.ch6;
+			status = xQueueSendToBack(angle_queue, (void*) &rc_values.ch1, portMAX_DELAY);
+			status = xQueueSendToBack(motor_queue, (void*) &rc_values.ch2, portMAX_DELAY);
+			if (status != pdPASS)
+			{
+				PRINTF("Queue Send failed!.\r\n");
+				while (1);
+			}
+			speedMode = chanel6 == 2000 ? 2 : chanel6 == 1500 ? 1 : 0;
+			status = xQueueSendToBack(led_queue, (void*) &speedMode, portMAX_DELAY);
+			vTaskDelay(10 / portTICK_PERIOD_MS);
+
+
 			printf("Channel 1 = %d\t", rc_values.ch1);
 			printf("Channel 2 = %d\t", rc_values.ch2);
 			printf("Channel 3 = %d\t", rc_values.ch3);

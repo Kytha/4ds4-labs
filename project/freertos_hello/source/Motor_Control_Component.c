@@ -15,7 +15,7 @@ void setupMotorComponent()
 	//Create Motor Queue
 	//Create Motor Task
 
-	motor_queue = xQueueCreate(32, sizeof(int));
+	motor_queue = xQueueCreate(32, sizeof(void*));
 	if (motor_queue == NULL)
 	{
 		PRINTF("Motor queue creation failed!.\r\n");
@@ -33,19 +33,19 @@ void setupMotorComponent()
 	//Create Angle Queue
 	//Create Position Task
 
-	angle_queue = xQueueCreate(32, sizeof(int));
+	angle_queue = xQueueCreate(32, sizeof(void*));
 	if (angle_queue == NULL)
 	{
 		PRINTF("Angle queue creation failed!.\r\n");
 		while (1);
 	}
 
-/*	BaseType_t positionStatus = xTaskCreate(positionTask, "positionTask", 200, (void*)angle_queue, 2, NULL);
+	BaseType_t positionStatus = xTaskCreate(positionTask, "positionTask", 200, (void*)angle_queue, 2, NULL);
 	if (positionStatus != pdPASS)
 	{
 		PRINTF("Position task creation failed!.\r\n");
 		while (1);
-	}*/
+	}
 }
 
 void setupMotorPins()
@@ -62,7 +62,7 @@ void setupMotorPins()
 void setupDCMotor()
 {
 	//Initialize PWM for DC motor
-	updatePWM_dutyCycle(FTM_CHANNEL_DC_MOTOR, 0.05);
+	updatePWM_dutyCycle(FTM_CHANNEL_DC_MOTOR, 0.06);
 	FTM_SetSoftwareTrigger(FTM_MOTORS, true);
 }
 
@@ -100,7 +100,7 @@ void setupServo()
 {
 	//Initialize PWM for Servo motor
 
-	updatePWM_dutyCycle(FTM_CHANNEL_SERVOMOTOR, 0.05);
+	updatePWM_dutyCycle(FTM_CHANNEL_SERVOMOTOR ,0.075);
 	FTM_SetSoftwareTrigger(FTM_MOTORS, true);
 }
 
@@ -135,18 +135,32 @@ void motorTask(void* pvParameters)
 	//Motor task implementation
 	QueueHandle_t queue1 = (QueueHandle_t)pvParameters;
 	BaseType_t status;
-	int input;
+	uint16_t value;
 
 	while(1)
 	{
-		status = xQueueReceive(queue1, (void *) &input, portMAX_DELAY);
+		status = xQueueReceive(queue1, (void *) &value, portMAX_DELAY);
 		if (status != pdPASS)
 			continue;
-		printf("Hello World");
+		float temp = ((float)value - 1500.0f)*0.00005 + 0.075;
+		updatePWM_dutyCycle(FTM_CHANNEL_DC_MOTOR, temp);
+		FTM_SetSoftwareTrigger(FTM_MOTORS, true);
 	}
 }
 
 void positionTask(void* pvParameters)
 {
+	QueueHandle_t queue1 = (QueueHandle_t)pvParameters;
+	BaseType_t status;
+	uint16_t value;
+	while(1)
+	{
+		status = xQueueReceive(queue1, (void *) &value, portMAX_DELAY);
+		if (status != pdPASS)
+			continue;
+		float temp = ((float)value - 1500.0f)*0.00005 + 0.075;
+		updatePWM_dutyCycle(FTM_CHANNEL_SERVOMOTOR, temp);
+		FTM_SetSoftwareTrigger(FTM_MOTORS, true);
+	}
 
 }
