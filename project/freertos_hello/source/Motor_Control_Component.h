@@ -16,6 +16,18 @@
 #define FTM_CHANNEL_DC_MOTOR	kFTM_Chnl_0
 #define FTM_CHANNEL_SERVOMOTOR	kFTM_Chnl_3
 
+enum MOTOR_MODE
+{
+	STOP = 0,
+	REVERSE = 1,
+	FORWARD =2
+};
+struct MotorMessage
+{
+	uint16_t speed;
+	uint16_t mode;
+};
+
 extern QueueHandle_t motor_queue, angle_queue;
 
 void setupMotorComponent();

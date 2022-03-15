@@ -22,7 +22,7 @@ void setupLEDComponent()
 	//Create LED Queue
 	//Create LED Task
 	led_queue = xQueueCreate(8, sizeof(void*));
-	BaseType_t rcStatus = xTaskCreate(ledTask, "ledTask", 200, NULL, 2, NULL);
+	BaseType_t rcStatus = xTaskCreate(ledTask, "ledTask", 200, NULL, 3, NULL);
 	if (rcStatus != pdPASS)
 	{
 		PRINTF("LED task creation failed!.\r\n");
@@ -47,7 +47,7 @@ void setupLEDs()
 	//Initialize GREEN LED
 	ftm_config_t ftmInfo;
 	ftm_chnl_pwm_signal_param_t ftmParam;
-	ftmParam.chnlNumber = kFTM_Chnl_5;
+	ftmParam.chnlNumber = FTM_GREEN_CHANNEL;
 	ftmParam.level = kFTM_HighTrue;
 	ftmParam.dutyCyclePercent = 0;
 	ftmParam.firstEdgeDelayPercent = 0U;
@@ -61,7 +61,7 @@ void setupLEDs()
 
 	//Initialize RED LED
 
-	ftmParam.chnlNumber = kFTM_Chnl_1;
+	ftmParam.chnlNumber = FTM_RED_CHANNEL;
 	ftmParam.level = kFTM_HighTrue;
 	ftmParam.dutyCyclePercent = 0;
 	ftmParam.firstEdgeDelayPercent = 0U;
@@ -75,7 +75,7 @@ void setupLEDs()
 
 	//Initialize BLUE LED
 
-	ftmParam.chnlNumber = kFTM_Chnl_4;
+	ftmParam.chnlNumber = FTM_BLUE_CHANNEL;
 	ftmParam.level = kFTM_HighTrue;
 	ftmParam.dutyCyclePercent = 0;
 	ftmParam.firstEdgeDelayPercent = 0U;
@@ -94,7 +94,7 @@ void ledTask(void* pvParameters)
 
 	while(1)
 	{
-		int mode;
+		uint16_t mode;
 		BaseType_t status;
 		status = xQueueReceive(led_queue, (void *) &mode, portMAX_DELAY);
 		FTM_UpdatePwmDutycycle(FTM3, kFTM_Chnl_1, kFTM_EdgeAlignedPwm, 0);
@@ -104,12 +104,15 @@ void ledTask(void* pvParameters)
 			continue;
 		switch(mode)
 		{
-		case 0:
-			FTM_UpdatePwmDutycycle(FTM3, kFTM_Chnl_1, kFTM_EdgeAlignedPwm, 250);
-		case 1:
-			FTM_UpdatePwmDutycycle(FTM3, kFTM_Chnl_4, kFTM_EdgeAlignedPwm, 250);
-		case 2:
-			FTM_UpdatePwmDutycycle(FTM3, kFTM_Chnl_5, kFTM_EdgeAlignedPwm, 250);
+		case STOP:
+			FTM_UpdatePwmDutycycle(FTM3, FTM_RED_CHANNEL, kFTM_EdgeAlignedPwm, 250);
+			break;
+		case REVERSE:
+			FTM_UpdatePwmDutycycle(FTM3, FTM_BLUE_CHANNEL, kFTM_EdgeAlignedPwm, 250);
+			break;
+		case FORWARD:
+			FTM_UpdatePwmDutycycle(FTM3, FTM_GREEN_CHANNEL, kFTM_EdgeAlignedPwm, 250);
+			break;
 		}
 		FTM_SetSoftwareTrigger(FTM3, true);
 	}

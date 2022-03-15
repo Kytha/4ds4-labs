@@ -3,11 +3,15 @@
 QueueHandle_t motor_queue;
 QueueHandle_t angle_queue;
 
+ftm_config_t ftmInfo;
+ftm_chnl_pwm_signal_param_t ftmParam;
+ftm_chnl_pwm_signal_param_t ftmParam2;
+ftm_pwm_level_select_t pwmLevel = kFTM_HighTrue;
 
 void setupMotorComponent()
 {
 	setupMotorPins();
-	setupPWM();
+
 	setupDCMotor();
 	setupServo();
 
@@ -22,7 +26,7 @@ void setupMotorComponent()
 		while (1);
 	}
 
-	BaseType_t motorStatus = xTaskCreate(motorTask, "motorTask", 200, (void*)motor_queue, 2, NULL);
+	BaseType_t motorStatus = xTaskCreate(motorTask, "motorTask", 200, (void*)motor_queue, 3, NULL);
 	if (motorStatus != pdPASS)
 	{
 		PRINTF("Motor task creation failed!.\r\n");
@@ -40,12 +44,15 @@ void setupMotorComponent()
 		while (1);
 	}
 
-	BaseType_t positionStatus = xTaskCreate(positionTask, "positionTask", 200, (void*)angle_queue, 2, NULL);
+	BaseType_t positionStatus = xTaskCreate(positionTask, "positionTask", 200, (void*)angle_queue, 3, NULL);
 	if (positionStatus != pdPASS)
 	{
 		PRINTF("Position task creation failed!.\r\n");
 		while (1);
 	}
+
+	setupPWM();
+
 }
 
 void setupMotorPins()
@@ -61,47 +68,36 @@ void setupMotorPins()
 
 void setupDCMotor()
 {
-	//Initialize PWM for DC motor
-	updatePWM_dutyCycle(FTM_CHANNEL_DC_MOTOR, 0.06);
-	FTM_SetSoftwareTrigger(FTM_MOTORS, true);
+	ftmParam.chnlNumber = FTM_CHANNEL_DC_MOTOR;
+	ftmParam.level = pwmLevel;
+	ftmParam.dutyCyclePercent = 7;
+	ftmParam.firstEdgeDelayPercent = 0U;
+	ftmParam.enableComplementary = false;
+	ftmParam.enableDeadtime = false;
 }
 
 void setupPWM()
 {
-	ftm_config_t ftmInfo;
-	ftm_chnl_pwm_signal_param_t ftmParam0;
-	ftm_chnl_pwm_signal_param_t ftmParam1;
-	ftm_pwm_level_select_t pwmLevel = kFTM_HighTrue;
-
-	ftmParam0.chnlNumber = FTM_CHANNEL_DC_MOTOR;
-	ftmParam0.level = pwmLevel;
-	ftmParam0.dutyCyclePercent = 7;
-	ftmParam0.firstEdgeDelayPercent = 0U;
-	ftmParam0.enableComplementary = false;
-	ftmParam0.enableDeadtime = false;
-
-	ftmParam1.chnlNumber = FTM_CHANNEL_SERVOMOTOR;
-	ftmParam1.level = pwmLevel;
-	ftmParam1.dutyCyclePercent = 7;
-	ftmParam1.firstEdgeDelayPercent = 0U;
-	ftmParam1.enableComplementary = false;
-	ftmParam1.enableDeadtime = false;
-
 	FTM_GetDefaultConfig(&ftmInfo);
 	ftmInfo.prescale = kFTM_Prescale_Divide_128;
-
 	FTM_Init(FTM_MOTORS, &ftmInfo);
-	FTM_SetupPwm(FTM_MOTORS, &ftmParam0, 1U, kFTM_EdgeAlignedPwm, 50U, CLOCK_GetFreq(kCLOCK_BusClk));
-	FTM_SetupPwm(FTM_MOTORS, &ftmParam1, 1U, kFTM_EdgeAlignedPwm, 50U, CLOCK_GetFreq(kCLOCK_BusClk));
+	ftm_chnl_pwm_signal_param_t ftmParams [2]= {ftmParam, ftmParam2};
+
+	FTM_SetupPwm(FTM_MOTORS, ftmParams, 2U, kFTM_EdgeAlignedPwm, 50U,CLOCK_GetFreq(kCLOCK_BusClk));
 	FTM_StartTimer(FTM_MOTORS, kFTM_SystemClock);
 }
 
 void setupServo()
 {
 	//Initialize PWM for Servo motor
+	//Initialize PWM for Servo motor
+	ftmParam2.chnlNumber = FTM_CHANNEL_SERVOMOTOR;
+	ftmParam2.level = pwmLevel;
+	ftmParam2.dutyCyclePercent = 7;
+	ftmParam2.firstEdgeDelayPercent = 0U;
+	ftmParam2.enableComplementary = false;
+	ftmParam2.enableDeadtime = false;
 
-	updatePWM_dutyCycle(FTM_CHANNEL_SERVOMOTOR ,0.075);
-	FTM_SetSoftwareTrigger(FTM_MOTORS, true);
 }
 
 void updatePWM_dutyCycle(ftm_chnl_t channel, float dutyCycle)
@@ -135,15 +131,31 @@ void motorTask(void* pvParameters)
 	//Motor task implementation
 	QueueHandle_t queue1 = (QueueHandle_t)pvParameters;
 	BaseType_t status;
-	uint16_t value;
+	struct MotorMessage mm;
 
 	while(1)
 	{
-		status = xQueueReceive(queue1, (void *) &value, portMAX_DELAY);
+		status = xQueueReceive(queue1, (void *) &mm, portMAX_DELAY);
 		if (status != pdPASS)
 			continue;
-		float temp = ((float)value - 1500.0f)*0.00005 + 0.075;
-		updatePWM_dutyCycle(FTM_CHANNEL_DC_MOTOR, temp);
+		float temp;
+		uint16_t mode = mm.mode;
+		switch(mode)
+		{
+		case STOP:
+			updatePWM_dutyCycle(FTM_CHANNEL_DC_MOTOR, 0.07334);
+			break;
+		case FORWARD:
+			temp = ((float)mm.speed - 1000.0f)*0.000025 + 0.07334;
+			updatePWM_dutyCycle(FTM_CHANNEL_DC_MOTOR, temp);
+			break;
+		case REVERSE:
+			temp =  0.07334 - ((float)mm.speed - 1000.0f)*0.000025;
+			updatePWM_dutyCycle(FTM_CHANNEL_DC_MOTOR, temp);
+			break;
+		default:
+			break;
+		}
 		FTM_SetSoftwareTrigger(FTM_MOTORS, true);
 	}
 }

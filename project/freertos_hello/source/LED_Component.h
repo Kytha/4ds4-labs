@@ -16,9 +16,9 @@
 #include <stdarg.h>
 
 #define FTM_LED 				FTM3
-#define FTM_RED_CHANNEL			//Define red LED channel
-#define FTM_GREEN_CHANNEL		//Define green LED channel
-#define FTM_BLUE_CHANNEL		//Define blue LED channel
+#define FTM_RED_CHANNEL			kFTM_Chnl_1
+#define FTM_GREEN_CHANNEL		kFTM_Chnl_5
+#define FTM_BLUE_CHANNEL		kFTM_Chnl_4
 
 extern QueueHandle_t led_queue;
 
