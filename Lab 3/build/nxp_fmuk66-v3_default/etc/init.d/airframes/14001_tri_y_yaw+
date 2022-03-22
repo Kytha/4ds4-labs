@@ -1,0 +1,3 @@
+. ${R}etc/init.d/rc.mc_defaults
+param set-default MAV_TYPE 15
+set MIXER tri_y_yaw+

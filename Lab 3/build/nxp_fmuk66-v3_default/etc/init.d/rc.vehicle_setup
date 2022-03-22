@@ -1,0 +1,59 @@
+if [ $VEHICLE_TYPE = fw ]
+then
+if [ $MIXER = none ]
+then
+echo "FW mixer undefined"
+fi
+. ${R}etc/init.d/rc.interface
+. ${R}etc/init.d/rc.fw_apps
+fi
+if [ $VEHICLE_TYPE = mc ]
+then
+if [ $MIXER = none ]
+then
+echo "MC mixer undefined"
+fi
+. ${R}etc/init.d/rc.interface
+. ${R}etc/init.d/rc.mc_apps
+fi
+if [ $VEHICLE_TYPE = rover ]
+then
+if [ $MIXER = none ]
+then
+echo "rover mixer undefined"
+fi
+. ${R}etc/init.d/rc.interface
+. ${R}etc/init.d/rc.rover_apps
+fi
+if [ $VEHICLE_TYPE = vtol ]
+then
+if [ $MIXER = none ]
+then
+echo "VTOL mixer undefined"
+fi
+. ${R}etc/init.d/rc.interface
+. ${R}etc/init.d/rc.vtol_apps
+fi
+if [ $VEHICLE_TYPE = airship ]
+then
+if [ $MIXER = none ]
+then
+echo "Airship mixer undefined"
+fi
+. ${R}etc/init.d/rc.interface
+. ${R}etc/init.d/rc.airship_apps
+fi
+if [ $VEHICLE_TYPE = uuv ]
+then
+if [ $MIXER = none ]
+then
+echo "UUV mixer undefined"
+fi
+. ${R}etc/init.d/rc.interface
+. ${R}etc/init.d/rc.uuv_apps
+fi
+if [ $VEHICLE_TYPE = none ]
+then
+echo "No autostart ID found"
+ekf2 start &
+fi

@@ -1,0 +1,4 @@
+. ${R}etc/init.d/rc.mc_defaults
+param set-default MAV_TYPE 14
+set MIXER octo_+
+set PWM_OUT 12345678

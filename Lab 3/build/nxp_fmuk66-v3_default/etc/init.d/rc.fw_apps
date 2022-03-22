@@ -1,0 +1,10 @@
+ekf2 start &
+if param compare SYS_CTRL_ALLOC 1
+then
+control_allocator start
+fi
+fw_att_control start
+fw_pos_control_l1 start
+airspeed_selector start
+fw_autotune_attitude_control start
+land_detector start fixedwing

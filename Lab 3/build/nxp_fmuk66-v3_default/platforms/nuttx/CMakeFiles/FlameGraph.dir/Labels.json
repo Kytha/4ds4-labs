@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/ds/Documents/23/PX4-Autopilot/build/nxp_fmuk66-v3_default/platforms/nuttx/CMakeFiles/FlameGraph"
+		},
+		{
+			"file" : "/home/ds/Documents/23/PX4-Autopilot/build/nxp_fmuk66-v3_default/platforms/nuttx/CMakeFiles/FlameGraph.rule"
+		},
+		{
+			"file" : "/home/ds/Documents/23/PX4-Autopilot/build/nxp_fmuk66-v3_default/platforms/nuttx/CMakeFiles/FlameGraph-complete.rule"
+		},
+		{
+			"file" : "/home/ds/Documents/23/PX4-Autopilot/build/nxp_fmuk66-v3_default/external/Stamp/FlameGraph/FlameGraph-install.rule"
+		},
+		{
+			"file" : "/home/ds/Documents/23/PX4-Autopilot/build/nxp_fmuk66-v3_default/external/Stamp/FlameGraph/FlameGraph-mkdir.rule"
+		},
+		{
+			"file" : "/home/ds/Documents/23/PX4-Autopilot/build/nxp_fmuk66-v3_default/external/Stamp/FlameGraph/FlameGraph-download.rule"
+		},
+		{
+			"file" : "/home/ds/Documents/23/PX4-Autopilot/build/nxp_fmuk66-v3_default/external/Stamp/FlameGraph/FlameGraph-update.rule"
+		},
+		{
+			"file" : "/home/ds/Documents/23/PX4-Autopilot/build/nxp_fmuk66-v3_default/external/Stamp/FlameGraph/FlameGraph-patch.rule"
+		},
+		{
+			"file" : "/home/ds/Documents/23/PX4-Autopilot/build/nxp_fmuk66-v3_default/external/Stamp/FlameGraph/FlameGraph-configure.rule"
+		},
+		{
+			"file" : "/home/ds/Documents/23/PX4-Autopilot/build/nxp_fmuk66-v3_default/external/Stamp/FlameGraph/FlameGraph-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"FlameGraph"
+		],
+		"name" : "FlameGraph"
+	}
+}

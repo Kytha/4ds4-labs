@@ -1,0 +1,4 @@
+set VEHICLE_TYPE airship
+param set-default MAV_TYPE 7
+set MIXER_AUX pass
+set PWM_AUX_OUT 1234

@@ -1,0 +1,7 @@
+ekf2 start &
+if param compare SYS_CTRL_ALLOC 1
+then
+control_allocator start
+fi
+uuv_att_control start
+land_detector start rover
